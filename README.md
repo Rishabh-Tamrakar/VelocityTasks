@@ -402,7 +402,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 📧 **Email:** [support@velocitytasks.dev](mailto:support@velocitytasks.dev)
+- 📧 **Email:** [support@velocitytasks.dev](rishabh.tamrakar@protonmail.com)
 - 🐛 **Issues:** [GitHub Issues](https://github.com/your-username/velocity-tasks/issues)
 - 💬 **Discussions:** [GitHub Discussions](https://github.com/your-username/velocity-tasks/discussions)
 - 📖 **Documentation:** [Wiki](https://github.com/your-username/velocity-tasks/wiki)
@@ -418,3 +418,4 @@ Made with ❤️ for the developer community
 [⭐ Star this project](https://Rishabh-Tamrakar/velocity-tasks) | [🐛 Report Bug](https://github.com/Rishabh-Tamrakar/velocity-tasks/issues) | [💡 Request Feature](https://github.com/your-username/velocity-tasks/issues)
 
 </div>
+
