@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <display-name>VelocityTasks</display-name>
+    <description>Ultra-Lightweight Task Management Web Application</description>
+
+    <!-- Welcome file configuration -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <!-- MIME type mappings -->
+    <mime-mapping>
+        <extension>js</extension>
+        <mime-type>application/javascript</mime-type>
+    </mime-mapping>
+    
+    <mime-mapping>
+        <extension>css</extension>
+        <mime-type>text/css</mime-type>
+    </mime-mapping>
+    
+    <mime-mapping>
+        <extension>json</extension>
+        <mime-type>application/json</mime-type>
+    </mime-mapping>
+
+    <!-- Security constraints -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Secure Content</web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+            <http-method>PUT</http-method>
+            <http-method>DELETE</http-method>
+        </web-resource-collection>
+        <!-- Uncomment for HTTPS only -->
+        <!--
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+        -->
+    </security-constraint>
+
+    <!-- Session configuration -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+        <cookie-config>
+            <http-only>true</http-only>
+            <secure>false</secure> <!-- Set to true for HTTPS -->
+        </cookie-config>
+    </session-config>
+
+    <!-- Error pages -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/index.html</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/index.html</location>
+    </error-page>
+
+    <!-- Context parameters -->
+    <context-param>
+        <param-name>app.name</param-name>
+        <param-value>VelocityTasks</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>app.version</param-name>
+        <param-value>1.0.0</param-value>
+    </context-param>
+
+    <!-- Filters for caching -->
+    <filter>
+        <filter-name>CacheFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.ExpiresFilter</filter-class>
+        <init-param>
+            <param-name>ExpiresByType text/css</param-name>
+            <param-value>access plus 1 month</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ExpiresByType application/javascript</param-name>
+            <param-value>access plus 1 month</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ExpiresByType text/html</param-name>
+            <param-value>access plus 0 seconds</param-value>
+        </init-param>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>CacheFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Compression filter -->
+    <filter>
+        <filter-name>GzipFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.GzipFilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>GzipFilter</filter-name>
+        <url-pattern>*.css</url-pattern>
+    </filter-mapping>
+    
+    <filter-mapping>
+        <filter-name>GzipFilter</filter-name>
+        <url-pattern>*.js</url-pattern>
+    </filter-mapping>
+    
+    <filter-mapping>
+        <filter-name>GzipFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
+
+</web-app>
