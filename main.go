@@ -17,7 +17,7 @@ import (
 func main() {
 	// Get configuration from environment variables
 	port := getEnv("PORT", "8080")
-	host := getEnv("HOST", "localhost")
+	host := getEnv("HOST", "0.0.0.0")
 	staticDir := getEnv("STATIC_DIR", "web")
 	maxTasks := getEnvInt("MAX_TASKS", 10000)
 
